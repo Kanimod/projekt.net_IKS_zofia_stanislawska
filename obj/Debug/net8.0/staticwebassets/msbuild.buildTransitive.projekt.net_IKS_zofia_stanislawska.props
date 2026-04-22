@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/projekt.net_IKS_zofia_stanislawska.props" />
+</Project>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "projekt.net_IKS_zofia_stanislawska/1.0.0": {
+        "runtime": {
+          "projekt.net_IKS_zofia_stanislawska.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "projekt.net_IKS_zofia_stanislawska/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
