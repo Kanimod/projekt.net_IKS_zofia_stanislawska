@@ -1,19 +1,40 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace projekt.net_IKS_zofia_stanislawska.Pages;
+using Fischt.Models;
 
+
+
+// Pages/Index.cshtml.cs
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly FischtDbContext _context;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(FischtDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
+
+    public List<User> Users { get; set; }
 
     public void OnGet()
     {
+        Users = _context.Users.ToList();
+    }
 
+    public void OnPost(string username)
+    {
+        var user = new User
+        {
+            Id = Guid.NewGuid().ToString(),
+            Username = username,
+            Mail = "test@test.com",
+            PasswordHash = "hash",
+            Admin = false,
+            Premium = false
+        };
+
+        _context.Users.Add(user);
+        _context.SaveChanges();
+        OnGet();
     }
 }

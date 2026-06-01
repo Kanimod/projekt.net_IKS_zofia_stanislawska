@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("projekt.net_IKS_zofia_stanislawska")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61c3f50968c1259ed27da67b480eede4f62b9f9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+21abf5b287f0bbaf0830d4534f0bdfa6f004e685")]
 [assembly: System.Reflection.AssemblyProductAttribute("projekt.net_IKS_zofia_stanislawska")]
 [assembly: System.Reflection.AssemblyTitleAttribute("projekt.net_IKS_zofia_stanislawska")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
