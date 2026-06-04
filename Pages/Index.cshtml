@@ -1,16 +1,21 @@
 ﻿@page
-@model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using Fischt.Models
 
-<h1>Użytkownicy</h1>
+@inject SignInManager<User> SignInManager
 
-<form method="post">
-    <input type="text" name="username" placeholder="Username" required />
-    <button type="submit">Dodaj użytkownika</button>
-</form>
-
-<ul>
-    @foreach (var user in Model.Users)
-    {
-        <li>@user.Username - @user.Mail</li>
-    }
-</ul>
+@if (User.IsInRole("Admin"))
+{
+    <h1>Panel administratora</h1>
+    <p>Tu masz pełną kontrolę, statystyki, zarządzanie użytkownikami.</p>
+}
+else if (SignInManager.IsSignedIn(User))
+{
+    <h1>Witaj, @User.Identity.Name!</h1>
+    <p>To jest strona główna dla zwykłego użytkownika.</p>
+}
+else
+{
+    <h1>Witaj, gościu!</h1>
+    <p>Zaloguj się, aby poznać innych wędkarzy.</p>
+}

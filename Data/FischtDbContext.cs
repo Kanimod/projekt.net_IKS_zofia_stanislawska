@@ -1,14 +1,17 @@
 using Fischt.Models;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-    public class FischtDbContext : DbContext
+    public class FischtDbContext : IdentityDbContext<User>
     {
         public FischtDbContext(DbContextOptions<FischtDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Specie> Species { get; set; }
+
+        public DbSet<Interest> Interests { get; set; }
+        public DbSet<UserInterest> UserInterests { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<Invite> Invites { get; set; }
@@ -18,15 +21,8 @@ using Microsoft.EntityFrameworkCore;
         {
             base.OnModelCreating(modelBuilder);
 
-            // User configuration
-            modelBuilder.Entity<User>()
-                .HasKey(u => u.Id);
+            modelBuilder.Entity<User>().ToTable("Users");
 
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Profile)
-                .WithOne(p => p.User)
-                .HasForeignKey<Profile>(p => p.UserId)
-                .IsRequired();
 
             // Profile configuration
             modelBuilder.Entity<Profile>()
@@ -48,6 +44,24 @@ using Microsoft.EntityFrameworkCore;
             // Contact configuration (Composite Key)
             modelBuilder.Entity<Contact>()
                 .HasKey(c => c.Id);
+
+            // Interest configuration
+            modelBuilder.Entity<Interest>()
+                .HasKey(i => i.Id);
+
+            // UserInterest configuration (Many-To-Many)
+            modelBuilder.Entity<UserInterest>()
+                .HasKey(ui => new { ui.UserId, ui.InterestId });
+
+            modelBuilder.Entity<UserInterest>()
+                .HasOne(ui => ui.User)
+                .WithMany(u => u.UserInterests)
+                .HasForeignKey(ui => ui.UserId);
+
+            modelBuilder.Entity<UserInterest>()
+                .HasOne(ui => ui.Interest)
+                .WithMany(i => i.UserInterests)
+                .HasForeignKey(ui => ui.InterestId);
 
             modelBuilder.Entity<Contact>()
                 .HasIndex(c => new { c.UserId, c.ContactId })
