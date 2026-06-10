@@ -1,0 +1,26 @@
+@page
+@model Fischt.Pages.Admin.ModerateModel
+@{
+    ViewData["Title"] = "Moderation Panel";
+}
+
+<link rel="stylesheet" href="/css/moderate.css" />
+
+<div class="moderate-container">
+    <h2>Moderation Panel</h2>
+    <p class="moderate-subtitle">Manage the application's content</p>
+
+    <div class="moderate-grid">
+
+        <a asp-page="/Moderate/" class="moderate-card">
+            <h3>Profiles</h3>
+            <p>View and delete inappropriate profiles</p>
+        </a>
+
+        <a asp-page="/Moderate/ManageSpecie" class="moderate-card">
+            <h3>Species</h3>
+            <p>Add, edit, and delete species</p>
+        </a>
+
+    </div>
+</div>

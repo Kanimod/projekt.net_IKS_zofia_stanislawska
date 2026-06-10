@@ -1,0 +1,71 @@
+@page
+@model Fischt.Pages.Chat.IndexModel
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<link rel="stylesheet" href="/css/chat.css" />
+
+<div class="chat-shell">
+
+    <div class="chat-sidebar">
+        <h3>Twoje matche</h3>
+
+        @if (!Model.Matches.Any())
+        {
+            <p class="no-matches">You have no matches yet.</p>
+        }
+
+        @foreach (var match in Model.Matches)
+        {
+            var isActive = match.ConversationId == Model.OpenConversationId;
+            <a href="/Chat?conversationId=@match.ConversationId "class="match-item @(isActive ? "match-item--active" : "")">
+                <div class="match-avatar">🐟</div>
+                <span>@match.OtherUserName</span>
+            </a>
+        }
+    </div>
+
+    <div class="chat-window">
+
+        @if (Model.OpenConversationId == null)
+        {
+            <div class="chat-empty">
+                <p>Choose a conversation to start chatting!</p>
+            </div>
+        }
+        else
+        {
+            <div class="chat-header">
+                Chating with <strong>@Model.OpenWithUserName</strong>
+            </div>
+
+            <div class="chat-messages" id="messages">
+                @foreach (var msg in Model.Messages)
+                {
+                    var isMine = msg.SenderId == Model.CurrentUserId;
+                    <div class="message @(isMine ? "message--mine" : "message--theirs")">
+                        <div class="message-bubble">@msg.Text</div>
+                        <div class="message-time">
+                            @(DateTime.TryParse(msg.Timestamp, out var dt) ? dt.ToLocalTime().ToString("HH:mm") : "")
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <form method="post" asp-page-handler="Send" asp-route-conversationId="@Model.OpenConversationId" class="chat-form">
+                <input type="text"
+                    asp-for="NewMessageText"
+                    class="chat-input"
+                    placeholder="Write a message..."
+                    autocomplete="off" />
+                <button type="submit" class="chat-send-btn">Send</button>
+            </form>
+        }
+    </div>
+</div>
+
+<script>
+    const msgs = document.getElementById('messages');
+    if (msgs) msgs.scrollTop = msgs.scrollHeight;
+</script>

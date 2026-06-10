@@ -1,0 +1,55 @@
+.delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.delete-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 440px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.delete-icon { font-size: 56px; margin-bottom: 16px; }
+
+.delete-card h2 { font-size: 24px; margin-bottom: 12px; color: #333; }
+
+.delete-card p { color: #666; font-size: 15px; margin-bottom: 10px; line-height: 1.5; }
+
+.delete-warning {
+    color: #e74c3c !important;
+    font-size: 13px !important;
+    background: #fff0f0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 28px !important;
+}
+
+.delete-buttons { display: flex; gap: 12px; justify-content: center; }
+
+.btn-cancel {
+    padding: 12px 28px;
+    border-radius: 100px;
+    background: #f0f0f5;
+    color: #555;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn-cancel:hover { background: #e0e0e8; }
+
+.btn-delete {
+    padding: 12px 28px;
+    border-radius: 100px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-delete:hover { background: #c0392b; }

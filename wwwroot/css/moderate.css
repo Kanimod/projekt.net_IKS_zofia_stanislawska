@@ -1,0 +1,241 @@
+.moderate-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.moderate-container h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.moderate-subtitle {
+    color: #888;
+    margin-bottom: 32px;
+    font-size: 15px;
+}
+
+.moderate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.moderate-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 2px solid transparent;
+}
+
+.moderate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: #7c3aed;
+    color: #333;
+}
+
+.moderate-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.moderate-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.moderate-card p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Styl linku Moderate w sidebarze */
+.sidebar-link--admin {
+    color: #a78bfa !important;
+}
+
+.sidebar-link--admin:hover {
+    background-color: #1e1b4b !important;
+    color: #c4b5fd !important;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.admin-form-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.admin-form-card h3 {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+.inline-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.inline-form .form-control {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-edit-small {
+    background: #f0f0ff;
+    color: #7c3aed;
+    border: 1px solid #ddd6fe;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.btn-edit-small:hover {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.btn-cancel-small {
+    background: #f5f5f5;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.btn-cancel-small:hover { background: #eee; }
+
+
+.profiles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-admin-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+
+.profile-admin-photo {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-admin-photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f5;
+}
+
+.no-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f0f0f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+
+.photo-delete-form {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.btn-photo-delete {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: white;
+    border: 2px solid white;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    padding: 0;
+}
+
+.btn-photo-delete:hover { background: #c0392b; }
+
+
+.profile-admin-info {
+    flex: 1;
+}
+
+.profile-admin-info h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.profile-admin-info p {
+    font-size: 13px;
+    color: #666;
+    margin: 3px 0;
+}
+
+.admin-email { color: #7c3aed !important; }
+
+.admin-bio {
+    font-style: italic;
+    color: #999 !important;
+    margin-top: 8px !important;
+}
+
+
+.profile-admin-actions {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}

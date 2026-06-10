@@ -114,11 +114,23 @@ namespace projekt.net_IKS_zofia_stanislawska.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Gender")
                         .HasColumnType("TEXT");
 
                     b.Property<float?>("Length")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Preferences")
                         .HasColumnType("TEXT");
@@ -151,13 +163,7 @@ namespace projekt.net_IKS_zofia_stanislawska.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("BreedingSeason")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Depth")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("WaterFlavour")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background: url('/images/bubbles.png');
+    background-size: cover;
+    background-position: center;
+
+    z-index: -1;
+}
+
+.text {
+    min-height: 60vh;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #0ea5e9
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+.text-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+}
+
+.about-div {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+@media (max-width: 768px) {
+    .about-div {
+        grid-template-columns: 1fr;
+    }
+}

@@ -24,7 +24,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
             modelBuilder.Entity<User>().ToTable("Users");
 
 
-            // Profile configuration
             modelBuilder.Entity<Profile>()
                 .HasKey(p => p.Id);
 
@@ -37,19 +36,19 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
                 .WithMany(s => s.Profiles)
                 .HasForeignKey(p => p.SpecieId);
 
-            // Specie configuration
+
             modelBuilder.Entity<Specie>()
                 .HasKey(s => s.Id);
 
-            // Contact configuration (Composite Key)
+
             modelBuilder.Entity<Contact>()
                 .HasKey(c => c.Id);
 
-            // Interest configuration
+
             modelBuilder.Entity<Interest>()
                 .HasKey(i => i.Id);
 
-            // UserInterest configuration (Many-To-Many)
+
             modelBuilder.Entity<UserInterest>()
                 .HasKey(ui => new { ui.UserId, ui.InterestId });
 
@@ -79,7 +78,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
                 .HasForeignKey(c => c.ContactId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Conversation configuration
+
             modelBuilder.Entity<Conversation>()
                 .HasKey(c => c.Id);
 
@@ -88,7 +87,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
                 .WithMany(co => co.Conversations)
                 .HasForeignKey(c => c.ContactId);
 
-            // Invite configuration (Composite Key)
+
             modelBuilder.Entity<Invite>()
                 .HasKey(i => new { i.SenderId, i.ReceiverId });
 
@@ -104,7 +103,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
                 .HasForeignKey(i => i.ReceiverId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Message configuration
             modelBuilder.Entity<Message>()
                 .HasKey(m => m.Id);
 

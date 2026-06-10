@@ -1,0 +1,23 @@
+.background {
+    position: fixed;
+    inset: 0;
+
+    background: url('/images/stronaglowna.png');
+    background-size: cover;
+    background-position: center;
+
+    z-index: -1;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 40px;
+    border-radius: 60px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.15);
+    background: linear-gradient(180deg,#ed8012, #ed1212, #ed8012);
+}

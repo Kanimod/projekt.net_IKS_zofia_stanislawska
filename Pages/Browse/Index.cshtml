@@ -1,0 +1,73 @@
+@page
+@model Fischt.Pages.Browse.IndexModel
+@{
+    ViewData["Title"] = "Browse";
+}
+
+<link rel="stylesheet" href="/css/browse.css" />
+
+@if (TempData["MatchMessage"] != null)
+{
+    <div class="match-toast">
+        @TempData["MatchMessage"]
+    </div>
+}
+
+<div class="browse-container">
+
+    @if (Model.NoMoreProfiles)
+    {
+        <div class="no-profiles">
+            <p>No new profiles to show.</p>
+            <p>Check back later!</p>
+        </div>
+    }
+    else if (Model.CurrentProfile != null)
+    {
+        var p = Model.CurrentProfile;
+
+        <div class="profile-card">
+            
+            <div class="profile-photo">
+                @if (!string.IsNullOrEmpty(p.PhotoPath))
+                {
+                    <img src="@p.PhotoPath" alt="Profile photo" />
+                }
+                else
+                {
+                    <div class="profile-photo-placeholder">:3</div>
+                }
+            </div>
+
+            <div class="profile-info">
+                <h2>@(p.Name ?? "Anonim"), @(p.Age?.ToString() ?? "?")</h2>
+                @if (!string.IsNullOrEmpty(p.SpecieName))
+                {
+                    <span class="profile-tag">@p.SpecieName</span>
+                }
+                @if (!string.IsNullOrEmpty(p.Pronouns))
+                {
+                    <span class="profile-tag">@p.Pronouns</span>
+                }
+                @if (!string.IsNullOrEmpty(p.Bio))
+                {
+                    <p class="profile-bio">@p.Bio</p>
+                }
+            </div>
+
+
+            <div class="profile-buttons">
+                <form method="post" asp-page-handler="Pass">
+                    <input type="hidden" name="targetUserId" value="@p.UserId" />
+                    <button type="submit" class="btn-pass">x</button>
+                </form>
+
+                <form method="post" asp-page-handler="Like">
+                    <input type="hidden" name="targetUserId" value="@p.UserId" />
+                    <button type="submit" class="btn-like">❤️</button>
+                </form>
+            </div>
+        </div>
+    }
+
+</div>

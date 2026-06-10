@@ -1,0 +1,74 @@
+@page
+@model Fischt.Pages.Admin.ManageSpeciesModel
+@{
+    ViewData["Title"] = "Manage Species";
+}
+
+<link rel="stylesheet" href="/css/moderate.css" />
+
+<div class="moderate-container">
+    <a asp-page="/Moderate/Index" class="back-link">Back to panel</a>
+    <h2>Species</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="admin-form-card">
+        <h3>Add New Species</h3>
+        <form method="post" asp-page-handler="Add" class="inline-form">
+            <input type="text" name="name" class="form-control"
+                placeholder="Species name" required />
+            <button type="submit" class="btn-save-small">Add</button>
+        </form>
+    </div>
+
+    <!-- Lista gatunków -->
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var specie in Model.Species)
+            {
+                <tr>
+                    <td>@specie.Id</td>
+
+                    @if (Model.EditId == specie.Id)
+                    {
+                        <td>
+                            <form method="post" asp-page-handler="Update" class="inline-form">
+                                <input type="hidden" name="specieId" value="@specie.Id" />
+                                <input type="text" name="name" value="@specie.Name"
+                                    class="form-control" required />
+                                <button type="submit" class="btn-save-small">Save</button>
+                                <a asp-page="./ManageSpecies" class="btn-cancel-small">Cancel</a>
+                            </form>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>@specie.Name</td>
+                    }
+
+                    <td class="action-buttons">
+                        <a asp-page="./ManageSpecies" asp-route-editId="@specie.Id"
+                        class="btn-edit-small">Edit</a>
+
+                        <form method="post" asp-page-handler="Delete" style="display:inline;">
+                            <input type="hidden" name="specieId" value="@specie.Id" />
+                            <button type="submit" class="btn-delete-small"
+                                    onclick="return confirm('Delete species @specie.Name?')"> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

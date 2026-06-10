@@ -1,0 +1,74 @@
+@page
+@model Fischt.Pages.Moderate.ManageProfilesModel
+@{
+    ViewData["Title"] = "Manage Profiles";
+}
+
+<link rel="stylesheet" href="/css/moderate.css" />
+
+<div class="moderate-container">
+    <a asp-page="/Moderate/Index" class="back-link">← Back to panel</a>
+    <h2>User Profiles</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="profiles-grid">
+        @foreach (var profile in Model.Profiles)
+        {
+            <div class="profile-admin-card">
+
+                <div class="profile-admin-photo">
+                    @if (!string.IsNullOrEmpty(profile.PhotoPath))
+                    {
+                        <img src="@profile.PhotoPath" alt="Photo" />
+
+                        <form method="post" asp-page-handler="DeletePhoto"
+                            class="photo-delete-form">
+                            <input type="hidden" name="userId" value="@profile.UserId" />
+                            <button type="submit" class="btn-photo-delete"
+                                    onclick="return confirm('Delete this user\'s photo?')">
+                                🗑️
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <div class="no-photo">:3</div>
+                    }
+                </div>
+
+                <!-- Data -->
+                <div class="profile-admin-info">
+                    <h3>@(profile.Name ?? "No name")</h3>
+                    <p class="admin-email"> @profile.Email</p>
+                    @if (profile.Age != null)
+                    {
+                        <p> @profile.Age years old</p>
+                    }
+                    @if (!string.IsNullOrEmpty(profile.SpecieName))
+                    {
+                        <p> @profile.SpecieName</p>
+                    }
+                    @if (!string.IsNullOrEmpty(profile.Bio))
+                    {
+                        <p class="admin-bio">@profile.Bio</p>
+                    }
+                </div>
+
+
+                <div class="profile-admin-actions">
+                    <form method="post" asp-page-handler="DeleteProfile">
+                        <input type="hidden" name="userId" value="@profile.UserId" />
+                        <button type="submit" class="btn-delete-small"
+                                onclick="return confirm('Delete profile and user account for @profile.Name? This action cannot be undone!')"> Delete Account & Profile
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

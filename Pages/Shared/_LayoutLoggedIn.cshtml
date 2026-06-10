@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Fischt</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/logged-in.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="app-shell">
+
+        <nav class="sidebar">
+            <div class="sidebar-logo">
+                <a asp-page="/Index">
+                    <img src="~/images/logo.png" alt="Fischt" />
+                </a>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li>
+                    <a asp-page="/Chat/Index" class="sidebar-link">
+                        Chat
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/Browse/Index" class="sidebar-link">
+                        Browse
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/Profiles/Edit" class="sidebar-link">
+                        Edytuj profil
+                    </a>
+                </li>
+            </ul>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a asp-page="/Moderate/Index" class="sidebar-link sidebar-link--admin">
+                        Moderate
+                    </a>
+                </li>
+            }
+
+            <div class="sidebar-bottom">
+                <a asp-page="/Account/Delete" class="sidebar-link sidebar-link--danger">
+                    Delete account
+                </a>
+                <form method="post" asp-area="Identity" asp-page="/Account/Logout">
+                    <button type="submit" class="sidebar-link sidebar-link--logout">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            @RenderBody()
+        </main>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

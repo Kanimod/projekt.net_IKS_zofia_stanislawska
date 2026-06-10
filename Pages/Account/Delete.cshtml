@@ -1,0 +1,22 @@
+@page
+@model Fischt.Pages.Account.DeleteModel
+@{
+    ViewData["Title"] = "Delete account";
+}
+
+<link rel="stylesheet" href="/css/delete-account.css" />
+
+<div class="delete-container">
+    <div class="delete-card">
+        <h2>Delete account</h2>
+        <p>Are you sure you want to delete your account? This operation is <strong>irreversible</strong>.</p>
+        <p class="delete-warning">The following will be deleted: Your profile, all matches, and conversations.</p>
+
+        <form method="post">
+            <div class="delete-buttons">
+                <a asp-page="/Browse/Index" class="btn-cancel">Cancel</a>
+                <button type="submit" class="btn-delete">Yes, delete my account</button>
+            </div>
+        </form>
+    </div>
+</div>

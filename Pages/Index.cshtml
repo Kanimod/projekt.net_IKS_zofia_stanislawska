@@ -1,21 +1,34 @@
 ﻿@page
 @using Microsoft.AspNetCore.Identity
 @using Fischt.Models
+@inject UserManager<User> UserManager
 
 @inject SignInManager<User> SignInManager
 
-@if (User.IsInRole("Admin"))
-{
-    <h1>Panel administratora</h1>
-    <p>Tu masz pełną kontrolę, statystyki, zarządzanie użytkownikami.</p>
+
+
+@{
+    ViewData["Title"] = "Main Page";
 }
-else if (SignInManager.IsSignedIn(User))
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/Index.css"/>
+
+<div class="background"></div>
+
+@if (TempData["SuccessMessage"] != null)
 {
-    <h1>Witaj, @User.Identity.Name!</h1>
-    <p>To jest strona główna dla zwykłego użytkownika.</p>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 }
-else
-{
-    <h1>Witaj, gościu!</h1>
-    <p>Zaloguj się, aby poznać innych wędkarzy.</p>
+
+@{
+    if (!SignInManager.IsSignedIn(User))
+    {
+        <div class="welcome-text">
+            <h1>Welcome to Fischt</h1>
+            <p>Find your second half in the pond</p>
+        </div>
+    }
 }

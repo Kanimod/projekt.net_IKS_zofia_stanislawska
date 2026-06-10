@@ -1,8 +1,8 @@
+using Fischt.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
-[Authorize(Roles = "Admin")]
-public class IndexModel : PageModel
-{
-    public void OnGet() { }
-}
+namespace Fischt.Pages;
+
+
+

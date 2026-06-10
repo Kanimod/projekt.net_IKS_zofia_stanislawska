@@ -5,12 +5,108 @@
       "PackagePath": "staticwebassets/projekt.net_IKS_zofia_stanislawska.bundle.scp.css"
     },
     {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/Index.css",
+      "PackagePath": "staticwebassets/css/Index.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/Logged-in.css",
+      "PackagePath": "staticwebassets/css/Logged-in.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/Login.css",
+      "PackagePath": "staticwebassets/css/Login.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/about.css",
+      "PackagePath": "staticwebassets/css/about.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/browse.css",
+      "PackagePath": "staticwebassets/css/browse.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/chat.css",
+      "PackagePath": "staticwebassets/css/chat.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/delete-account.css",
+      "PackagePath": "staticwebassets/css/delete-account.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/edit-profile.css",
+      "PackagePath": "staticwebassets/css/edit-profile.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/moderate.css",
+      "PackagePath": "staticwebassets/css/moderate.css"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/register.css",
+      "PackagePath": "staticwebassets/css/register.css"
+    },
+    {
       "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/COPYRIGHT.txt",
+      "PackagePath": "staticwebassets/fonts/COPYRIGHT.txt"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_bold.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_bold.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_bolditalic.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_bolditalic.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_book.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_book.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_bookitalic.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_bookitalic.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_light.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_light.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_lightitalic.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_lightitalic.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_medium.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_medium.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/fonts/gothamrnd_mediumitalic.otf",
+      "PackagePath": "staticwebassets/fonts/gothamrnd_mediumitalic.otf"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/images/Login-bg.png",
+      "PackagePath": "staticwebassets/images/Login-bg.png"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/images/bubbles.png",
+      "PackagePath": "staticwebassets/images/bubbles.png"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/images/kissing-fish.png",
+      "PackagePath": "staticwebassets/images/kissing-fish.png"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/images/logo.png",
+      "PackagePath": "staticwebassets/images/logo.png"
+    },
+    {
+      "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/images/stronaglowna.png",
+      "PackagePath": "staticwebassets/images/stronaglowna.png"
     },
     {
       "Id": "/Users/kanimod/Desktop/dotnet/projekt.net_IKS_zofia_stanislawska/wwwroot/js/site.js",
